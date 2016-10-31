@@ -1,0 +1,31 @@
+.hero {
+  background: #fd713e center center no-repeat;
+  background-size: cover;
+  color: white;
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+  line-height: 1.3125em;
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 80px 20px;
+  text-align: center;
+  width: 100%;
+  @media screen and (max-width: 769px) {
+    font-size: 24px;
+    padding-right: 2em
+  }
+  &-header {
+    display: block;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+  &-footer,
+  &-heading {
+    font-size: 12px;
+    letter-spacing: 0;
+    font-weight: normal;
+    text-transform: none;
+    font-family: "ocr-b-std", Lucida Console, Monaco, monospace;
+  }
+}

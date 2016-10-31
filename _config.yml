@@ -1,0 +1,13 @@
+# Site settings
+title: www.aynrandtakesthingsliterally.com
+description: www.aynrandtakesthingsliterally.com
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "www.aynrandtakesthingsliterally.com" # the base hostname & protocol for your site
+
+# Social
+email: hi@aynrandtakesthingsliterally.com
+twitter_username: www.aynrandtakesthingsliterally.com
+
+# Build settings
+markdown: kramdown
+gems: ['bourbon', 'github-pages']

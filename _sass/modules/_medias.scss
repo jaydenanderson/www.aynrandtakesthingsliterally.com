@@ -1,0 +1,118 @@
+// media
+.media {
+  zoom:1;
+  @include clearfix;
+  position: relative;
+}
+
+.media-block {
+  float: left;
+  position: relative;
+  margin-right: 24px;
+}
+.media-block-right {
+  float: right;
+  margin-right: 0;
+  margin-left: 24px;
+}
+
+.media-content {
+  position: relative;
+  @include media-hack;
+}
+
+.media-hero {
+  .media-block {
+    float: right;
+    margin: 0;
+    padding-left: 18px;
+
+    // &:before {
+    //   content: "Try one";
+    //   text-transform: uppercase;
+    //   background: $red;
+    //   color: #fff;
+    //   font-size: $h8Px;
+    //   height: 60px;
+    //   width: 60px;
+    //   display: block;
+    //   position: absolute;
+    //   top: 84px;
+    //   left: 0;
+    //   z-index: 20;
+    //   border-radius: 100px;
+    //   line-height: 1em;
+    //   font-weight: bold;
+    //   text-align: center;
+    //   padding: 16px 8px;
+    //   box-sizing: border-box;
+    //   @include transition(opacity .2s ease);
+    //   @include animation(bounce-left 2s ease);
+    //   @include animation-iteration-count(infinite);
+    // }
+
+    // &:after {
+    //   z-index: 19;
+    //   @include transform(scale(1.1,.88));
+    //   @include animation(bounce-left 2s ease);
+    //   @include animation-iteration-count(infinite);
+    //   @include transition(opacity .2s ease);
+    //   top: 84px;
+    //   left: 48px;
+    //   border: solid transparent;
+    //   content: "";
+    //   height: 0;
+    //   width: 0;
+    //   position: absolute;
+    //   pointer-events: none;
+    //   border-color: rgba(136, 183, 213, 0);
+    //   border-left-color: $red;
+    //   border-width: 30px;
+    //   margin-left: -30px;
+    //   display: block;
+    // }
+    
+    @include breakpoint(WM) {
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+
+    &.is-clicked {
+      &:before,
+      &:after {
+        opacity: 0;
+      }
+    }
+  }
+
+  .media-block,
+  .media-content {
+    width: 50%;
+  }
+
+  .media-content {
+    padding-right: 18px;
+    position: absolute;
+    top: 45%;
+    left: 0;
+    @include transform(translateY(-50%));
+  }
+
+  @include breakpoint(WL) {
+    .media-content,
+    .media-block {
+      float: none;
+      width: auto;
+      position: relative;
+      top: auto;
+      left: auto;
+      padding: 0 0 18px;
+      @include transform(none);
+    }
+    .media-content {
+      text-align: center;
+    }
+  }
+}

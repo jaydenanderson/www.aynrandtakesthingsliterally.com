@@ -1,0 +1,68 @@
+.quote {
+  text-align: left;
+}
+
+.quote-blurb {
+  font-style: italic;
+  color: $grayDarkerColor;
+  border-left: 2px solid $accentColor;
+  padding-left: 1em;
+}
+
+.quote-footer {
+  border-left: 2px solid transparent;
+  padding: .5em 0 0 1em;
+}
+
+.quote-author {
+  font-weight: bold;
+}
+
+.quote-author-title {
+  opacity: .5;
+  margin-bottom: .5em;
+}
+
+.quote-author-title,
+.quote-author-company {
+  display: block;
+  @include h10;
+}
+
+.quote-big {
+  position: relative;
+  text-align: center;
+
+  &:before {
+    content: "\201C";
+    display: block;
+    margin: 0 auto;
+    color: $accentColor;
+    font-size: 2.5em;
+    height: 40px;
+    width: 40px;
+    line-height: 65px;
+    text-align: center;
+    border: 1px solid $accentColor;
+    border-radius: 100px;
+    font-family: "Georgia", sans-serif;
+  }
+  .quote-blurb {
+    @include h4;
+    padding: .25em 0 .5em;
+    border-left: 0;
+    line-height: 1.2em;
+  }
+  .quote-footer {
+    padding: 0;
+  }
+
+  &:hover {
+    .quote-blurb {
+      color: $accentColor;
+    }
+    .quote-footer {
+      opacity: .5;
+    }
+  }
+}

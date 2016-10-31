@@ -1,0 +1,120 @@
+.list {
+  position: relative;
+}
+
+.list-item {
+  position: relative;
+  @include clearfix();
+}
+
+.list-item-icon {
+  text-align: center;
+}
+
+.list-item-action {
+  float: right;
+}
+
+.list-item-label {
+  display: table-cell;
+  vertical-align: top;
+  width: 10000px;
+}
+
+.list-bullet {
+  list-style: disc;
+  padding-left: 1.2em;
+  line-height: 1.5em;
+
+  .list-item {
+    padding-bottom: .5em;
+  }
+}
+
+.list-number {
+  list-style: decimal;
+  padding-left: 1.2em;
+  line-height: 1.5em;
+
+  .list-item {
+    padding-bottom: .5em;
+  }
+}
+
+.list-inline {
+  line-height: 48px;
+  .list-item,
+  .list-item-label {
+    width: auto;
+    display: inline-block;
+  }
+  .list-item {
+    padding: 0 .3em;
+  }
+}
+
+// iOS7 style picker list
+.list-picker,
+.sub-menu,
+.widget_categories ul {
+  background: $grayLightColor;
+
+  a {
+    display: block;
+    color: $grayBlueColor;
+    padding: 14px 0;
+  }
+
+  .menu-item-type-taxonomy,
+  .menu-item-type-post_type,
+  .cat-item,
+  li {
+    position: relative;
+    font-size: $h8Px;
+    line-height: 1.45em;
+    padding: 0 16px;
+    background: #fff;
+    &:after {
+      content:"";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 16px;
+      right: 0;
+      border-bottom: 1px solid $grayLightColor;
+    }
+    &:hover {
+      a {
+        color: $accentColor;
+      }
+    }
+    &:active {
+      background: $accentColor;
+      &:after {
+        display: none;
+      }
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+
+.list-picker-box {
+  .list-item:last-of-type {
+    .list-item-label {
+      border: none;
+    }
+  }
+}
+
+.list-picker-multi-actions {
+  .list-item-action {
+    opacity: .5;
+    float: left;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

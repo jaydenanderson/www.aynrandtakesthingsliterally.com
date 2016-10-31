@@ -1,0 +1,28 @@
+.accent-color                        { color: $accentColor; }
+.accent-bg                           { background-color: $accentColor; }
+.gray-dark-color                     { color: $grayDarkColor; }
+.gray-dark-bg                        { background-color: $grayDarkColor; }
+.gray-blue-color                     { color: $grayBlueColor; }
+.gray-blue-bg, .undefined-bg         { background-color: $grayBlueColor; }
+
+// default bg colors
+.teal-color                          { color: $teal !important; }
+.teal-bg                             { background-color: $teal !important; }
+.lime-color                          { color: $lime !important; }
+.lime-bg                             { background-color: $lime !important; }
+.mint-color                          { color: $mint !important; }
+.mint-bg                             { background-color: $mint !important; }
+.blue-color                          { color: $blue !important; }
+.blue-bg                             { background-color: $blue !important; }
+.purple-color                        { color: $purple !important; }
+.purple-bg                           { background-color: $purple !important; }
+.pink-color                          { color: $pink !important; }
+.pink-bg                             { background-color: $pink !important; }
+.yellow-color                        { color: $yellow !important; }
+.yellow-bg                           { background-color: $yellow !important; }
+.orange-color                        { color: $orange !important; }
+.orange-bg                           { background-color: $orange !important; }
+.red-orange-color                    { color: $redOrange !important; }
+.red-orange-bg                       { background-color: $redOrange !important; }
+.red-color                           { color: $red !important; }
+.red-bg                              { background-color: $red !important; }

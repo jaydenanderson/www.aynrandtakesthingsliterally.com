@@ -1,0 +1,861 @@
+* {
+  box-sizing: border-box;
+  outline: none !important;
+}
+
+body {
+  font: 400 $fontSizeEm/1.5em $fontFamily;
+  color: #000;
+  background-color: #fff;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: darken($accentColor, 10%);
+  color: #fff;
+  text-shadow: none;
+}
+
+input,
+textarea,
+button {
+  font-size: 1em;
+}
+
+@include breakpoint(WM) {
+  body,
+  input,
+  textarea,
+  button {
+    font: 400 1em/1.5em $fontFamily;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $linkColor;
+  &:hover {
+    color: darken($linkColor, 10%);
+  }
+}
+
+.b {
+  font-weight: bold !important;
+}
+
+.i {
+  font-style: italic !important;
+}
+
+.text-normal {
+  font-weight: normal !important;
+}
+
+.text-body {
+  line-height: 1.5em;
+
+  &-boombox {
+  color: rgba(107, 120, 133, .5);
+  }
+}
+
+.text-track {
+  letter-spacing: .05em;
+}
+
+.text-left-small {
+  @include breakpoint (WM) {
+    text-align: left;
+  }
+}
+
+.text-upper {
+  text-transform: uppercase;
+}
+
+.blockquote {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 18px;
+  position: relative;
+
+  &:before {
+    content: "\201C";
+    position: absolute;
+    top: -66px;
+    left: -32px;
+    opacity: .1;
+    font: 600 360px/1em "Helvetica Neue", sans-serif;
+
+    @include breakpoint(WM) {
+      top: -54px;
+      left: 0;
+      font-size: 180px;
+    }
+  }
+}
+
+.blockquote-source {
+  padding: $gridGutterEM 0 0 $gridGutterEM;
+}
+
+.blockquote-source-company {
+  color: $grayBlueColor;
+} 
+
+.hyphenate {
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+@if $normalize == true {
+  em,
+  i {
+    font-style:italic;
+  }
+
+  strong,
+  b {
+    font-weight: bold;
+  }
+
+  p {
+    margin: 1em 0;
+  }
+
+  blockquote {
+    color: $grayBlueColor;
+    border-left: 2px solid $grayBlueColor;
+    padding-left: $gridGutterHalfEM;
+    font-style: italic;
+  }
+
+  big {
+    @include h4;
+  }
+
+  small {
+    @include h10;
+  }
+
+  del {
+    text-decoration: line-through;
+  }
+
+  ul {
+    margin: .5em 0;
+    list-style: disc;
+  }
+
+  ol {
+    margin: .5em 0;
+    list-style: decimal;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    opacity: .5;
+  }
+
+  hr {
+    margin: 1em 0;
+    border-top: 1px solid $grayBlueColor;
+  }
+
+  h1 {
+    @include h1;
+  }
+
+  h2 {
+    @include h2;
+  }
+
+  h3 {
+    @include h3;
+  }
+
+  h4 {
+    @include h4;
+  }
+
+  h5 {
+    @include h5;
+  }
+
+  h6 {
+    @include h6;
+  }
+
+  hr {
+    border-style: solid;
+    border: none;
+    border-top: 2px solid $grayBlueColor;
+    opacity:.3;
+    clear:both;
+    width: 100px;
+    margin: 36px auto;
+  }
+
+  table {
+  }
+
+  td {
+    border-right: 1px solid $grayBlueColor;
+  }
+
+  th {
+    @include h10;
+    line-height: 1em;
+    color: $grayBlueColor;
+  }
+}
+
+.is-formatted,
+.single-post .post {
+  font-size: 1.3333em;
+  line-height: 1.5em;
+
+  @include breakpoint(WM) {
+    font-size: 1em;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
+    margin: .5em auto;
+  }
+  hr {
+    border-style: solid;
+    border: none;
+    border-top: 2px solid $grayBlueColor;
+    opacity:.3;
+    clear:both;
+    width: 100px;
+    margin: 36px auto;
+  }
+  em,
+  i {
+    font-style:italic;
+  }
+
+  strong,
+  b,
+  .b {
+    font-weight: bold;
+  }
+
+  p {
+    margin: 1em 0;
+  }
+
+  blockquote {
+    color: $grayBlueColor;
+    border-left: 2px solid $grayBlueColor;
+    padding-left: $gridGutterEM;
+    font-style: italic;
+  }
+
+  big {
+    @include h4;
+  }
+
+  small {
+    @include h10;
+  }
+
+  del {
+    text-decoration: line-through;
+  }
+
+  ul {
+    margin: .5em 0 .5em 1.5em;
+    list-style: disc;
+  }
+
+  ol {
+    margin: .5em 0 .5em 1.5em;
+    list-style: decimal;
+  }
+
+  dt {
+    font-weight: bold;
+  }
+
+  dd {
+    opacity: .5;
+  }
+
+  hr {
+    margin: 1em 0;
+    border-top: 1px solid $grayBlueColor;
+  }
+
+  h1 {
+    @include h1;
+  }
+
+  h2 {
+    @include h2;
+  }
+
+  h3 {
+    @include h3;
+  }
+
+  h4 {
+    @include h4;
+  }
+
+  h5 {
+    @include h5;
+  }
+
+  h6 {
+    @include h6;
+  }
+
+  h1,h2,h3,h4,h5,h6 {
+    line-height: 1.2em;
+  }
+
+  table {
+    width: 100%;
+  }
+
+  td {
+    display: table-cell !important;
+    float: none !important;
+    text-align: left;
+    padding: $gridGutterHalfPX;
+    border-top: 1px solid lighten($grayDarkColor, 80%);
+    
+    &:first-child {
+      padding-left: 0;
+    }
+    
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  th {
+    float: none !important;
+    display: table-cell !important;
+    @include h8Cap;
+    text-align: left;
+    line-height: 1em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    
+    &:first-child {
+      padding-left: 0;
+    }
+    
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  a {
+    border-bottom: 1px solid rgba(34,36,38,.1);
+    color: $accentColor !important;
+
+    &:hover {
+      color: darken($accentColor,10%) !important;
+      border-color: darken($accentColor,10%) !important;
+    }
+  }
+}
+
+.text-left {
+  text-align: left !important;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.text-right {
+  text-align: right !important;
+}
+
+.opacity-1 { opacity:.1; }
+.opacity-2 { opacity:.2; }
+.opacity-3 { opacity:.3; }
+.opacity-4 { opacity:.4; }
+.opacity-5 { opacity:.5; }
+.opacity-6 { opacity:.6; }
+.opacity-7 { opacity:.7; }
+.opacity-8 { opacity:.8; }
+.opacity-9 { opacity:.9; }
+
+.rule {
+  border-style: solid;
+  border: none;
+  border-top: 2px solid $grayBlueColor;
+  opacity: .2;
+  clear:both;
+  width: 60px;
+  margin: 72px auto;
+}
+
+.rule-center {
+  margin: 36px auto;
+}
+
+.link {
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 2px solid rgba(34,36,38,.1);
+  &:hover {
+    color: darken($accentColor,10%);
+    border-color: darken($accentColor,10%);
+  }
+  &:active {
+    color: darken($accentColor,20%);
+    border-color: darken($accentColor,20%);
+  }
+}
+
+.link-teal {
+  color: $teal;
+  &:hover {
+    color: darken($teal,10%);
+    border-color: darken($teal,10%);
+  }
+  &:active {
+    color: darken($teal,20%);
+    border-color: darken($teal,20%);
+  }
+}
+
+.link-gray-blue {
+  color: $grayBlueColor;
+  &:hover {
+    color: darken($grayBlueColor,10%);
+    border-color: darken($grayBlueColor,10%);
+  }
+  &:active {
+    color: darken($grayBlueColor,20%);
+    border-color: darken($grayBlueColor,20%);
+  }
+}
+
+.link-white {
+  border-bottom: 2px solid rgba(255,255,255,.3);
+  color: rgba(255,255,255,1) !important;
+
+  &:hover {
+    color: #fff !important;
+    border-color: #fff;
+  }
+}
+
+.link-purple {
+  border-color: $purple;
+  color: $purple !important;
+
+  &:hover {
+    color: darken($purple,10%) !important;
+    border-color: darken($purple,10%);
+  }
+
+  &:active {
+    color: darken($purple,20%) !important;
+    border-color: darken($purple,20%);
+  }
+}
+
+.link-blue {
+  border-color: $blue;
+  color: $blue !important;
+
+  &:hover {
+    color: darken($blue,10%) !important;
+    border-color: darken($blue,10%);
+  }
+
+  &:active {
+    color: darken($blue,20%) !important;
+    border-color: darken($blue,20%);
+  }
+}
+
+// image spacer helpers give height to responsive images to prevent reflows
+// this should go on the container of a 100% width img
+// set img to pos absolute top/left 0
+// default ratio is 1:1 extend for others
+.image-spacer {
+  position: relative;    
+  height: 0;
+  overflow: hidden;
+  // background-color:rgba(0,0,0,.2); 
+  display: block;
+  padding-bottom: (100%);
+
+  img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.image-spacer-16-9{padding-bottom: (10%/16%*100%);}
+.image-spacer-4-3{padding-bottom: (3%/4%*100%)}
+.image-spacer-5-4{padding-bottom: (4%/5%*100%)}
+
+.image-spacer-label {
+  position: absolute;
+  bottom: 15%;
+  left: 50%;
+  @include transform(translate(-50%,0));
+  color: $grayBlueColor;
+}
+
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.float-none {
+  float: none;
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.transform-center {
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  @include transform(translate(-50%, -50%) !important);
+}
+
+// -------------------
+// branding-page 
+// -------------------
+
+.midGray {
+  color: $midGray !important;
+}
+
+.card {
+  border: solid 2px $midGray;
+  padding: 36px;
+}
+.feature-item {
+  position: relative;
+
+    &:before {
+    line-height: 28px;
+    background: $midGray;
+    border-radius: 100px;
+    color: #fff;
+    content: '✓';
+    display: inline-block;
+    font-family: "SSGeomiconsSquared";
+    font-feature-settings: "liga";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    height: 24px;
+    left: -36px;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    top: 0px;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 24px;
+    -moz-font-feature-settings: "liga";
+    -moz-font-feature-settings: "liga=1";
+    -ms-font-feature-settings: "liga" 1;
+    -o-font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+.feature-item-additional:before {
+  top: 20%;
+}
+
+.brand {
+
+  &-h1 {
+    @include h1;
+    span {
+      display: block;
+    }
+  }
+
+  &-text-body {
+    display: block;
+    font-weight: normal !important;
+    line-height: 2.25rem;
+    position: relative;
+
+    &-h1 {
+      @extend .brand-text-body;
+      font-size: 4.125rem;
+      font-weight: 600 !important;
+      line-height: 1;
+    }
+
+    &-h2 {
+      @extend .brand-text-body;
+      font-size: 2.25rem;
+      font-weight: 600 !important;
+      line-height: 1;
+    }
+
+    &-h3 {
+      @extend .brand-text-body;
+      font-size: 1.5rem;
+      font-weight: 900 !important;
+      line-height: 1;
+    }
+
+    &-h4 {
+      @extend .brand-text-body;
+      font-size: 1.3125rem;
+      font-weight: 600 !important;
+      line-height: 1;
+    }
+
+    &-h5 {
+      @extend .brand-text-body;
+      font-size: 1.3125rem;
+      font-weight: 400 !important;
+      line-height: 1;
+    }
+
+  }
+
+  &-guideline {
+    margin-top: 8rem;
+
+    &:before {
+      background: $inactiveGray;
+      content: '';
+      display: block;
+      height: 2px;
+      width: 108px;
+    }
+
+    p {
+      margin-bottom: 4.5rem;
+    }
+
+    &-item {
+      p {
+        margin-bottom: 2.25rem !important;
+      }
+    }
+  }
+
+  &-card {
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+    background: $grayLightColor;
+    border-radius: 2px;
+    color: $blueGray;
+    height: 184px;
+    margin-bottom: 4rem;
+    margin: 18px;
+    width: 255px;
+
+    span:first-child { 
+      font-size: 16px;
+      margin-top: 194px;
+     
+    }
+
+    span {
+      display: block;
+      font-size: 14px;
+    }
+
+    a {
+        &:hover {
+          cursor: hand;
+        }
+    }
+
+    &-dotted {
+      @extend .brand-card;
+      background-color: #fff;
+      border: dashed 2px $midGray;
+    }
+
+    &-border {
+      @extend .brand-card;
+      background-color: #fff;
+      border: solid 2px $midGray;
+    }
+
+    &-purple {
+      @extend .brand-card;
+      background-color: $purple;
+    }
+
+    &-blue {
+       @extend .brand-card;
+       background-color: $blue;
+    }
+
+    &-royal {
+       @extend .brand-card;
+       background-color: $royal;
+    }
+
+    &-teal {
+       @extend .brand-card;
+       background-color: $teal;
+    }
+
+    &-mint {
+       @extend .brand-card;
+       background-color: $mint;
+    }
+
+    &-lime {
+       @extend .brand-card;
+       background-color: $lime;
+    }
+
+    &-yellow {
+       @extend .brand-card;
+       background-color: $yellow;
+    }
+
+    &-orange {
+       @extend .brand-card;
+       background-color: $orange;
+    }
+
+    &-reOrange {
+       @extend .brand-card;
+       background-color: $redOrange;
+    }
+
+    &-red {
+       @extend .brand-card;
+       background-color: $red;
+    }
+
+    &-pink {
+       @extend .brand-card;
+       background-color: $pink;
+    }
+
+    &-black {
+       @extend .brand-card;
+       background-color: $black;
+    }
+
+    &-charcoal {
+       @extend .brand-card;
+       background-color: $charcoal;
+    }
+
+    &-darkGray {
+       @extend .brand-card;
+       background-color: $grayBlueDarkColor;
+    }
+
+    &-blueGray {
+       @extend .brand-card;
+       background-color: $blueGray;
+    }
+
+    &-lightGray {
+       @extend .brand-card;
+       background-color: $grayLightColor;
+    }
+
+    &-inactiveGray {
+       @extend .brand-card;
+       background-color: $inactiveGray;
+    }
+
+    &-midGray {
+       @extend .brand-card;
+       background-color: $inactiveGray;
+    }
+  }
+
+  &-examples {
+    align-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: auto;
+    max-width: 1164;
+    text-align: left;
+  }
+
+  &-example-img {
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    display: block;
+  }
+
+  &-logo-color {
+    background-image: url(/images/logos/pollcaster/logo-color.png);
+  }
+
+  &-logo-gray {
+    background-image: url(/images/logos/pollcaster/logo-gray.png);
+  }
+
+  &-logo-white {
+    background-image: url(/images/logos/pollcaster/logo-white.png);
+  }
+
+  &-logo-red {
+    background-image: url(/images/logos/pollcaster/logo-red.png);
+  }
+
+  &-name {
+    float: left;
+    font-size: 2em;
+    font-weight: bold;
+    left: 37px;
+    position: relative;
+    top: 80px;
+
+    &-Pollcaster1:before {
+      @extend .brand-name;
+      content: 'Pollcaster';
+    }
+
+    &-pollcaster2:before {
+      @extend .brand-name;
+      content: 'pollcaster';
+    }
+
+    &-PollCaster3:before {
+      @extend .brand-name;
+      content: 'PollCaster';
+    }
+
+    &-pollCaster4:before {
+      @extend .brand-name;
+      content: 'pollCaster';
+    }
+  }
+
+}
+
+
+

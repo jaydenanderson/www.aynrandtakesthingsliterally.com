@@ -1,0 +1,163 @@
+.tooltip,
+[data-tooltip] {  
+  position: relative;
+  width: 0;
+  height: 0;
+  @include transform(rotate3d(0,0,0,0));
+
+  &:after {
+    content: attr(data-tooltip);
+    background: $red;
+    color: white;
+    padding: 8px 12px;
+    font-size: 14px !important;
+    line-height: 16px !important;
+    letter-spacing: 0 !important;
+    font-weight: bold !important;
+    text-transform: none !important;
+    border-radius: 2px;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    @include transform(translate(-50%, 0));
+    opacity: 0;
+    max-width: 100px;
+    min-width: 100px;
+  }
+
+  &:before {
+    top: 48px;
+    left: 50%;
+    border: solid transparent;
+    content: "";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-top-color: $red;
+    border-width: 6px;
+    margin-left: -6px;
+    display: block;
+  }
+  
+  &:hover {
+    overflow: visible;
+    
+    &:after {
+      opacity: 1;
+      height: auto;
+      width: auto;
+    }
+  }
+}
+
+.tooltip-right {
+  &:before {
+    left: -12px;
+    margin: -6px 0 0 0;
+    border-color: transparent;
+    border-right-color: $red;
+    top: 0;
+  }
+
+  &:after {
+    left: 0;
+    @include transform(translateY(-50%));
+  }
+}
+
+.tooltip-primary {
+  &:after {
+    opacity: 1;
+    height: auto;
+    width: auto;
+    background: $mint;
+    text-transform: uppercase !important;
+    letter-spacing: .05em !important;
+    font-weight: bold !important;
+    line-height: 24px !important;
+    padding: 0 .8em;
+    @include animation(bouncing 3s linear infinite);
+    z-index: 1;
+  }
+    
+  @include breakpoint(WL) {
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.tooltip-force-show {
+  &:before,
+  &:after {    
+    opacity: 1 !important;
+    height: auto !important;
+    width: auto !important;
+  }
+}
+
+.tooltip-large {
+  @include animation(bounce-up 2s ease);
+  @include animation-iteration-count(infinite);
+  @include filter(drop-shadow(0 10px 10px rgba(34,36,38,.3)));
+  &:after {
+    max-width: none;
+    padding: 14px 18px;
+    width: 172px !important;
+    text-align: center !important;
+    line-height: 1.25em !important;
+    font-size: 1em !important;
+  }
+
+  &:before {
+    top: 72px;
+  }
+}
+
+.tooltip-time {
+  position: absolute; left: 10%; bottom:10%;
+
+  &:before {
+    left: 30px;
+    top: 0;
+    margin: -12px 0 0 0;
+    border-color: transparent;
+    border-bottom-color: $red;
+  }
+
+  @include breakpoint(WL) {
+
+  }
+}
+.tooltip-shares {
+  position: absolute; left: 33%; top:39.5%;
+  @include breakpoint(WM) {
+    &:after {
+      top: 12px;
+    }
+  }
+}
+.tooltip-comments {
+  position: absolute; right: 2%; top:16.5%;
+  @include breakpoint(WM) {
+    right: 28%;
+    left: auto;
+
+    &:before {
+      left: 100%;
+      border-color: transparent;
+      border-left-color: $red;
+    }
+
+    &:after {
+      top: -12px;
+      left: auto;
+      right: 0;
+    }
+  }
+}

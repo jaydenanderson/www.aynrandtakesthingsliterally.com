@@ -1,0 +1,105 @@
+.footer {
+  background: #262626;
+  padding: 50px 10px 0;
+  font-size: 14px;
+  font-size: .875rem;
+  line-height: 100%;
+  width: 100%;
+  color: rgba(255,255,255,.5);
+  margin-top: 24px;
+  @media screen and (max-width: 769px) {
+    padding: 50px 30px 0;
+  }
+  a {
+    color: #fff;
+    &:hover {
+      opacity: .5;
+      cursor: pointer;
+    }
+  }
+  &-header {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,.3);
+    padding-bottom: 15px;
+    margin: 0 auto 15px;
+    max-width: 1024px;
+    align-items: flex-end;
+    &-item {
+      flex-shrink: 0;
+      margin: 0 6px 0 0;
+      &-heading {
+        margin: 0;
+        flex-grow: 1000;
+        @media screen and (max-width: 769px) {
+          width: 100%;
+          margin-bottom: 6px;
+        }
+      }
+    }
+  }
+  &-body {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto 15px;
+    padding-bottom: 15px;
+    max-width: 1024px;
+    @media screen and (max-width: 769px) {
+      display: block;
+    }
+    &-item {
+      flex: 1 1 auto;
+      @media screen and (max-width: 769px) {
+        display: block;
+        padding: 10px 0;
+      }
+    }
+  }
+  &-footer {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 7px;
+    margin: 0 auto 34px;
+    max-width: 1024px;
+    @media screen and (max-width: 769px) {
+      display: block;
+    }
+    &-item {
+      flex-shrink: 0;
+      margin-right: 30px;
+      @media screen and (max-width: 769px) {
+        display: block;
+        padding: 10px 0;
+      }
+      &:hover {
+        opacity: .5;
+      }
+      &-powered {
+        display: flex;
+        align-items: flex-start;
+        flex-grow: 100000;
+        justify-content: flex-end;
+        margin-right: 0;
+        text-align: right;
+        span {
+          white-space: nowrap;
+        }
+        @media screen and (max-width: 769px) {
+          display: block; 
+          text-align: center;
+          width: 200px;
+          margin: 40px auto;
+        }
+        a {
+          width: 100%;
+          max-width: 200px;
+          word-break: break-all;
+          margin-left: 6px;
+          @media screen and (max-width: 769px) {
+            display: inline;
+          }
+        }
+      }
+    }
+  }
+}

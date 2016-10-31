@@ -1,0 +1,61 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <!-- Open graph meta -->
+    <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+    <meta property="og:site_name" content="Pollcaster.com"/>
+    <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}" />
+    <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}" />
+    <meta property="fb:app_id" content="378106035711883" />
+    <meta property="og:type" content="article" />
+    <meta property="og:locale" content="en_US" />
+    <!-- <meta property="og:locale:alternate" content="fr_FR" />  -->
+    <meta property="article:author" content="https://www.facebook.com/thepollcaster" />
+    <meta property="article:publisher" content="https://www.facebook.com/thepollcaster" />
+    <meta property="og:image" content="https://www.pollcaster.com/images/banner-1200x630.png" /> 
+    <meta property="og:image:height" content="630" /> 
+    <meta property="og:image:width" content="1200" /> 
+
+    <!-- Twitter specific meta -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@pollcaster_" />
+    <meta name="twitter:creator" content="@pollcaster_" />
+
+    <meta name="apple-mobile-web-app-title" content="Pollcaster">
+    <link rel="apple-touch-icon-precomposed" href="/images/icons/apple-touch-icon-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/images/icons/apple-touch-icon-57-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/images/icons/apple-touch-icon-72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/images/icons/apple-touch-icon-76-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/images/icons/apple-touch-icon-114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/images/icons/apple-touch-icon-144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/images/icons/apple-touch-icon-152-precomposed.png" />
+
+    <link rel="stylesheet" href="/css/application.css">
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+
+    <script type="text/javascript">
+      (function(f,b){if(!b.__SV){var a,e,i,g;window.mixpanel=b;b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=f.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";e=f.getElementsByTagName("script")[0];e.parentNode.insertBefore(a,e)}})(document,window.mixpanel||[]);
+
+  
+      if(window.location.hostname == 'www.pollcaster.com' ) {
+        mixpanel.init("{{ site.mixpanel_token_production }}");
+      }
+      else {
+        mixpanel.init("{{ site.mixpanel_token_staging }}");
+      }
+
+    </script>
+    <script type="text/javascript" src="/js/mixpanel-tracking.js"></script>
+
+  </head>
+  <body class="page page-dark">
+    <img src="https://api.movementventures.com/_uid.gif" width="0" height="0" style="display:none;visibility:hidden">

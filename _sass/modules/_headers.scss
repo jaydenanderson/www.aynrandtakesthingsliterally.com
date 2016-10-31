@@ -1,0 +1,128 @@
+.header {
+  border-top: 15px solid #262626;
+  width: 100%;
+  color: #3c3c3c;
+  font-size: 14px;
+  line-height: 100%;
+  margin-bottom: 15px;
+  &-logo {
+    display: block;
+    width: 241px;
+    height: 38px;
+    background-repeat: none;
+    background-size: cover;
+    margin-bottom: 6px;
+    overflow: hidden;
+    h1 {
+      text-indent: -10000px;
+      background: transparent;
+    }
+    @media screen and (max-width: 600px) {
+      width: 190px;
+      height: 29px;
+      margin-bottom: 0;
+    }
+  }
+  &-ad {
+    margin: 20px 0 30px;
+    width: 100%;
+    position: relative;
+    background-color: #262626;
+    @media screen and (max-width: 600px) {
+      margin: 0 0 10px;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+    &-image {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 270px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      @media screen and (max-width: 600px) {
+        max-width: 150px;
+      }
+    }
+    &-background {
+      height: 100px;
+      width: 100%;
+      background-size: cover;
+      background-color: #262626;
+      background-blend-mode: overlay;
+      background-position: center 60%;
+      @media screen and (max-width: 600px) {
+        height: 48px;
+      }
+    }
+  }
+  a {
+    color: inherit;
+    &:hover {
+      opacity: .5;
+    }
+  }
+  &-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-item {
+      flex-shrink: 0;
+      &:first-child {
+        flex-grow: 10000;
+      }
+      &-logo {
+        margin-left: 10px;
+        &-nba {
+          @media screen and (max-width: 600px) {
+            display: none;
+          }
+        }
+        &-image {
+          width: 40px;
+        }
+      }
+    }
+  }
+  &-footer {
+    border-top: 2px solid;
+    border-color: inherit;
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 100000;
+    justify-content: flex-end;
+    margin-right: 0;
+    text-align: right;
+    @media screen and (max-width: 958px) {
+      justify-content: flex-start;
+    }
+    &-item {
+      flex-shrink: 0;
+      padding-top: 10px;
+      margin-right: 2em;
+      @media screen and (max-width: 600px) {
+        display: none;
+      }
+      &:last-child {
+        flex: 10000;
+        margin-right: 0;
+        color: rgba(black, .5);
+        @media screen and (max-width: 958px) {
+          display: none;
+        }
+        a {
+          color: black;
+        }
+        span {
+          display: block;
+          opacity: .5;
+          font-size: 10px;
+        }
+      }
+    }
+  }
+}

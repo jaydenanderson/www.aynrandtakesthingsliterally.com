@@ -1,0 +1,223 @@
+// Parent
+.tabs {
+  @include clearfix();
+}
+
+// Children
+.tabs-link {
+  @include h8Cap();
+  border-bottom: 2px solid transparent;
+  color: $grayBlueColor;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1em;
+  margin: 0 18px 0 0;
+  padding-bottom: 6px;
+  text-align: center;
+  
+  &:first-of-type {
+    margin-left: 0;
+  }
+  
+  &:hover {
+
+  }
+  
+  &:active,
+  &.active,
+  &.is-active {
+    border-color: $accentColor;
+    color: $accentColor;
+  }
+}
+
+// Skins
+.tabs-heavy {
+
+  .icon {
+    display: block;
+    line-height: 48px;
+    font-size: 48px;
+    margin-bottom: 12px;
+  }
+
+  .tabs-link {
+    border: 2px solid $accentColor;
+    border-left: none;
+    color: $accentColor;
+    display: block;
+    float: left;
+    width: 50%;
+    margin: 0;
+    padding: 36px 0;
+    font-size: 24px;
+    
+    &:first-of-type {
+      border-radius: 2px 0 0 2px;
+      border-left: 2px solid $accentColor;
+    }
+    
+    &:last-of-type {
+      border-radius: 0 2px 2px 0;
+    }
+    
+    &:hover {
+      background: $accentColor;
+      color: rgba(255,255,255,.7);
+    }
+    
+    &:active,
+    &.is-active {
+      color: #fff;
+      background: $accentColor;
+    }
+  }
+}
+
+.tabs-heavy-small {
+  .tabs-link {
+    @include h8Cap();
+    padding: 16px 0;
+  }
+}
+
+.tabs-heavy-white {
+  .tabs-link {
+    border: 2px solid #fff;
+    border-left: none;
+    color: rgba(255,255,255,.8);
+    
+    &:first-of-type {
+      border-left: 2px solid #fff;
+    }
+    
+    &:hover {
+      background: #fff;
+      color: $grayBlueColor;
+    }
+    
+    &:active,
+    &.is-active {
+      color: $accentColor;
+      background: #fff;
+    }
+  }
+}
+
+.tabs-heavy-three {
+  .tabs-link {
+    width: 33.3333%;
+
+    @include breakpoint(WL) {
+      width: 100%;
+      border: 2px solid $accentColor;
+      border-top-width: 0;
+      &:first-of-type {
+        border: 2px solid $accentColor;
+      }
+    }
+  }
+}
+
+.tabs-heavy-medium {
+  .tabs-link {
+    height: auto;
+    line-height: 1em;
+    padding: 15px 0;
+    min-width: 48px;
+  }
+}
+
+.page-template-story_subpage {
+  @include breakpoint(WXL) {
+    .tabs-plain {
+      float: none;
+    }
+  }
+  .col-6 img {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.tabs-logos {
+  float: right;
+  line-height: 72px;
+
+  .page_logo {
+    padding: 0 9px;
+    display: inline-block;
+  }
+
+  .logo-customer {
+    padding: 0;
+    display: inline-block;
+    max-width: 100px;
+    vertical-align: middle;
+  }
+
+  @include breakpoint(WXL) {
+    float: none;
+
+    .page_logo {
+      width: 19%;
+      text-align: center;
+    }
+
+    .logo-customer {
+      max-width: 100%;
+    }
+  }
+
+  .page_logo {
+    filter: saturate(0%);
+    -webkit-filter: saturate(0%);
+    -moz-filter: saturate(0%);
+    -o-filter: saturate(0%);
+    -ms-filter: saturate(0%);
+    opacity: .5;
+    
+    &.color {
+      opacity: 1;
+      filter: saturate(100%);
+      -webkit-filter: saturate(100%);
+      -moz-filter: saturate(100%);
+      -o-filter: saturate(100%);
+      -ms-filter: saturate(100%);
+    }
+  }
+}
+
+.tabs-plain {
+  float:left;
+
+  @include breakpoint(WL) {
+    float: none;
+    text-align: center;
+  }
+
+  .tabs-link {
+    line-height: 72px;
+    height: 72px;
+
+    @include breakpoint(WL) {
+      line-height: 36px;
+      height: 36px;
+      font-size: 11px;
+    }
+  }
+}
+
+.story {
+  text-align: left;
+}
+
+.stories-title {
+  line-height: 72px;
+  padding: 0 18px;
+
+  @include breakpoint(WL) {
+    display: none;
+  }
+}

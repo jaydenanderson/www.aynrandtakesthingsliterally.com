@@ -1,0 +1,86 @@
+.menu-item-has-children {
+  position: relative;
+}
+
+.dropdown {
+  display: inline-block;
+}
+
+.dropdown-heading,
+.sub-menu .menu-item-type-custom {
+  @include h8Cap();
+  padding: 16px 16px 8px;
+}
+
+.dropdown-trigger {
+  cursor: pointer;
+}
+
+.dropdown-menu,
+.sub-menu {
+  display: none !important;
+  position: absolute !important;
+  left: 50%;
+  @include transform(translateX(-50%));
+  top: 100%;
+  margin-top: 8px;
+  box-shadow: 0 10px 10px rgba(34,36,38,.15);
+  min-width: 132px;
+  border-radius: 2px;
+  background: $grayLightColor;
+  display: none;
+  text-align: left !important;
+  z-index: 2;
+  color: $grayBlueColor;
+
+  &.is-active {
+    display: block !important;
+    @include animation(fadeInDown .1s ease);
+  }
+
+  .nav-tabs & {
+    margin-top: 0;
+  }
+}
+
+.dropdown-menu-gray {
+  background: $grayLightColor;
+  
+  .list-picker {
+    background: #fff;
+  }
+}
+
+.dropdown-right {
+  .dropdown-menu {
+    left: auto;
+    right: 0;
+    @include transform(none);
+  }
+}
+
+.account-dropdown {
+  .dropdown-menu {
+    left: -50%;
+    @include breakpoint(WM) {
+      left: 0;
+      @include transform(none);
+    }
+  }
+}
+
+.dropdown-header-overflow {
+  .dropdown-menu {
+    @include breakpoint(WM) {
+      left: auto;
+      right: 0;
+      @include transform(none);
+    }
+  }
+}
+
+.dropdown-menu-right {
+  left: auto;
+  right: 0;
+  @include transform(none);
+}

@@ -1,0 +1,140 @@
+.table-analytics {
+  width: 100%;
+  text-align: left;
+
+  img {
+    display: block;
+    width: 120px;
+    border-radius: 2px;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 12px;
+  }
+  table {
+    width: 100%;
+  }
+  th {
+    @include h8Cap;
+  }
+  th,
+  td {
+    vertical-align: top;
+    display: table-cell !important;
+    float: none !important;
+    padding: $gridGutterHalfPX 0;
+    border-top: 1px solid darken($grayLightColor, 5%);
+    background: $grayLightColor;
+  }
+  thead {
+    td,
+    th {
+      border-top: none !important;
+    }
+  }
+  .table-item {
+    > td {
+      border-top: none;
+      padding: 0;
+    }
+    &.is-expanded {
+      table {
+        th,
+        td {
+          padding-left: 16px;
+          background: $grayDarkColor;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .table-item-content {
+    padding: 0 0 0 15px;
+    border-top: none;
+
+    th {
+      border-top: none;
+    }
+  }
+  .is-expanded {
+    > td {
+      border-top: none;
+    }
+    .list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      line-height: 36px;
+    }
+
+    td,
+    th {
+      background: $grayDarkColor;
+      color: #fff;
+    }
+  }
+}
+
+.table-responses {
+  .table-item {
+    cursor: pointer;
+    .table-item-arrow {
+      position: relative;
+      &:after {
+        margin-top: -3px;
+        top: 50%;
+        right: 15px;
+        border: solid transparent;
+        content: " ";
+        height: 0;
+        width: 0;
+        position: absolute;
+        pointer-events: none;
+        border-color: rgba(136, 183, 213, 0);
+        border-top-color: $grayDarkColor;
+        border-width: 6px;
+      }
+    }
+  }
+  .is-expanded {
+    &.table-item {
+      .table-item-arrow {
+        position: relative;
+        padding-left: 0;
+        &:after {
+          margin-top: -9px;
+          @include transform(rotate(180deg));
+          border-top-color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.table-item-toggle {
+  position: relative;
+  cursor: pointer;
+  @include transition(all .2s linear);
+
+  &:after {
+    display: inline-block;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    pointer-events: none;
+    border-color: rgba(136, 183, 213, 0);
+    border-top-color: $grayDarkColor;
+    border-width: 6px;
+    margin-top: 2px;
+  }
+
+  &.is-active {
+    background: $grayDarkColor;
+    padding-left: 16px;
+    color: #fff;
+    &:after {
+      @include transform(rotate(180deg));
+      border-top-color: #fff;
+    }
+  }
+}

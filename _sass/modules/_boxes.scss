@@ -1,0 +1,148 @@
+.box {
+  display: block;
+  position: relative;
+  @include transform(rotate3d(0,0,0));
+  @include clearfix;
+  border-radius: 2px;
+}
+
+.box-white {
+  background: #fff;
+  padding: 18px;
+}
+
+.box-green {
+  background: $mint;
+  color: #fff;
+  padding: 18px;
+}
+
+.box-investor {
+  display: inline-block;
+  width: 240px;
+  padding: 18px;
+  height: 244px;
+  vertical-align: top;
+
+  @include breakpoint(WM) {
+    width: 48%;
+    height: 234px;
+    padding: 18px 9px;
+  }
+
+  .figure {
+    max-width: 120px;
+    margin: 0 auto 12px;;
+  }
+}
+
+.box-purple {
+  background: $accentColor;
+  color: #fff;
+  padding: 24px 18px;
+  margin-top: 72px;
+
+  .widget h3 {
+    @include h5();
+    color: #fff !important;
+    font-weight: bold;
+    display: inline-block;
+    line-height: 1.2em;
+    margin: 0 12px 0 0;
+  }
+  .textWidget {
+    display: inline-block;
+  }
+}
+
+.box-contact {
+  background: $grayBlueColor;
+  color: #fff;
+  height: 420px;
+
+  @include breakpoint(WM) {
+    height: 200px;
+    margin-bottom: 24px;
+  }
+
+  .box-body {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    @include transform(translate(-50%,-50%));
+  }
+}
+
+.box-pricing {
+  border: 2px solid #475461;
+  text-align: left;
+  margin-bottom: 36px;
+
+  .box-header {
+    padding: 18px 18px 8px 18px;
+    @include h3();
+    line-height: 1em;
+  }
+
+  .box-subheader {
+    font-weight: bold;
+    @include h4();
+    opacity: .7;
+    font-weight: bold;
+    padding: 0 18px;
+
+    a {
+      color: rgba(255,255,255,.5);
+      font-weight: normal;
+      &:hover {
+        color: rgba(255,255,255,.7);
+      }
+      &:active {
+        color: rgba(255,255,255,1);
+      }
+    }
+  }
+
+  .box-body {
+    padding: 18px 18px 0 18px;
+  }
+
+  .box-footer {
+    text-align: center;
+    padding: 24px;
+  }
+
+  @include breakpoint(WXXL) {
+    font-size: 14px;
+  }
+}
+
+.monthly {
+  .discount {
+    display: none;
+  }
+}
+
+.box-pricing-primary {
+  background: $mint;
+  border-color: $mint;
+  color: #fff;
+}
+
+.box-pricing-minimal {
+  text-align: center;
+  .icon {
+    display: block;
+    font-size: 48px;
+    display: block;
+    padding: 36px 0;
+  }
+}
+
+.page-id-558 {
+  .entry-title {
+    display: none;
+  }
+}

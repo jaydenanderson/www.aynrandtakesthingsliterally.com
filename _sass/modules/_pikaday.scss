@@ -1,0 +1,51 @@
+.pika-single {
+  font-family: $fontFamily;
+}
+
+.pika-title {
+  @include h8Cap;
+}
+
+abbr[title], dfn[title] {
+  border: none;
+  cursor: default;
+}
+
+.pika-table {
+  abbr {
+    @include h10;
+    letter-spacing: 0;
+  }
+}
+
+.pika-button {
+  background: transparent;
+  font-family: $fontFamily;
+  font-size: 12px;
+  text-align: center;
+  color: $grayDarkColor;
+
+  &:hover {
+    color: #fff !important;
+    background: $accentColor !important;
+  }
+
+  .is-today & {
+    color: $grayDarkColor !important;
+    font-weight: bold !important;
+
+    &:hover {
+      color: #fff !important;
+    }
+  }
+
+  .is-selected & {
+    background: $accentColor !important;
+    color: #fff !important;
+    box-shadow: none;
+    &:hover {
+      background: $accentColor !important;
+      color: #fff !important;
+    }
+  }
+}

@@ -1,0 +1,263 @@
+.figure {
+  position: relative;
+  display: block;
+  background-size: cover;
+}
+
+.figure-16 {
+  width: 16px;
+}
+
+.figure-24 {
+  width: 24px;
+}
+
+.figure-36 {
+  width: 36px;
+}
+
+.figure-48 {
+  width: 48px;
+}
+
+.figure-60 {
+  width: 60px;
+}
+
+.figure-image {
+  display: block;
+  width: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.figure-rounded {
+  border-radius: 2px;
+  .figure-image {
+    border-radius: 2px;
+  }
+}
+
+.figure-zoom {
+  &:hover {
+    box-shadow: 0 0 0 2px rgba(255,255,255,1), 0 0 0 4px $accentColor;
+  }
+}
+
+.figure-avatar {
+  position: relative;
+  border-radius: 1000px !important;
+
+  &.null-bg {
+    background: rgba(107,120,133,.5);
+  }
+
+  .figure-image {
+    border-radius: 1000px;
+  }
+
+  .figure-caption {
+    @include h8Cap;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include transform(translate(-50%, -50%));
+    color: #fff;
+  }
+
+  // &:before {
+  //   position: absolute;
+  //   border-radius: 2px;
+  //   content: "";
+  //   display: block;
+  //   left: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   top: 0;
+  //   border: 1px solid $grayDarkTransparentLighterColor;
+  // }
+}
+
+.figure-logo {
+  display: inline-block;
+  vertical-align: middle;
+  opacity: .7;
+  .figure-image {
+    display: inline-block;
+    width: auto;
+    max-width: 200px;
+
+    @include breakpoint(WXXXL) {
+      max-width: 120px;
+    }
+  }
+}
+
+.image-spacer {
+  position: relative;
+  border-radius: 2px;
+  background-size: cover;
+  background-position: center;
+
+  .button-media-remove  {
+    display: none;
+  }
+
+  &:hover {
+    .button-media-remove  {
+      display: block;
+    }
+  }
+  
+  &:before {
+    border-radius: 2px;
+    display: block;
+    content:"";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  img {
+    border-radius: 2px;
+  }
+}
+
+.image-spacer-button {
+  &:hover {
+    &:before {
+      background-color: rgba(34,36,38,.5);
+    }
+  }
+}
+
+.image-spacer-actions {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  text-align: center;
+  display: none;
+  line-height: 1em;
+
+  .image-spacer:hover & {
+    display: block;
+  }
+}
+
+.image-spacer-action {
+  height: 36px;
+  padding: 0 6px;
+  border-radius: 1000px;
+  line-height: 36px;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(34, 36, 38, 0.6); 
+
+  &:hover {
+    color: rgba(255,255,255,.7);
+  }
+}
+
+.figure-feature {
+  border: 2px solid $red;
+  border-radius: 1000px;
+  width: 160px;
+  height: 160px;
+  display: block;
+  margin: 0 auto 18px;
+  line-height: 156px;
+
+  @include breakpoint(WS) {
+    width: 120px;
+    height: 120px;
+  }
+
+  .figure-image {
+    border-radius: 1000px;
+  }
+
+  .icon {
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    background: $red;
+    display: block;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    margin-left: -12px;
+    line-height: 28px;
+    border-radius: 100px;
+    color: #fff;
+  }
+}
+
+.figure-breakdown {
+  margin: 0 auto -160px;
+  max-width: 600px;
+  @include breakpoint(WM) {
+    margin-bottom: -20%;
+  }
+  .tooltip,
+  .figure-caption {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    @include transition(all .2s linear);
+
+    @include breakpoint(WM) {
+      top: 15%;
+
+      &:before {
+        top: 68px;
+      }
+    }
+
+    @include breakpoint(WS) {
+      top: 10%
+    }
+  }
+
+  .figure-caption {
+    max-width: 240px;
+    color: #fff;
+    background: $teal;
+    max-width: none;
+    padding: 14px 18px;
+    text-align: center;
+    line-height: 1.25em;
+    font-size: 1em;
+    @include transform(translateX(-50%));
+    opacity: 0;
+  }
+  &.is-clicked {
+    .tooltip {
+      opacity: 0;
+    }
+    .figure-caption {
+      opacity: 1;
+      @include animation(bounce-up 1s ease);
+      @include filter(drop-shadow(0 10px 10px rgba(34,36,38,.3)));
+    }
+  }
+}
+
+.figure-screen {
+  margin-top: 12px;
+}
+
+.figure-lines {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  @include transform(translateY(-50%));
+
+  @include breakpoint(WL) {
+    top: 20%;
+  }
+}

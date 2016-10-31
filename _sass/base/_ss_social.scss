@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "SSSocialRegular";
+  src: asset-url('ss-social-regular.eot');
+  src: asset-url('ss-social-regular.eot?#iefix') format('embedded-opentype'),
+       asset-url('ss-social-regular.woff') format('woff'),
+       asset-url('ss-social-regular.ttf')  format('truetype'),
+       asset-url('ss-social-regular.svg#SSSocialRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* This triggers a redraw in IE to Fix IE8's :before content rendering. */
+html:hover [class^="icon-ss-social"]{-ms-zoom: 1;}
+
+.icon-ss-social, [class^="icon-ss-social"], [class*=" icon-ss-social"] {
+  vertical-align: middle;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: -2px;
+  
+  &:before {
+    font-family: "SSSocialRegular";
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    white-space: nowrap;
+    /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    -o-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+    vertical-align: middle;
+  }
+}
+
+.icon-ss-social-facebook:before,.icon-ss-social-facebook.right:after{content:''}.icon-ss-social-twitter:before,.icon-ss-social-twitter.right:after{content:''}.icon-ss-social-linkedin:before,.icon-ss-social-linkedin.right:after{content:''}.icon-ss-social-googleplus:before,.icon-ss-social-googleplus.right:after{content:''}.icon-ss-social-appdotnet:before,.icon-ss-social-appdotnet.right:after{content:''}.icon-ss-social-zerply:before,.icon-ss-social-zerply.right:after{content:''}.icon-ss-social-reddit:before,.icon-ss-social-reddit.right:after{content:''}.icon-ss-social-steam:before,.icon-ss-social-steam.right:after{content:''}.icon-ss-social-tumblr:before,.icon-ss-social-tumblr.right:after{content:''}.icon-ss-social-wordpress:before,.icon-ss-social-wordpress.right:after{content:''}.icon-ss-social-blogger:before,.icon-ss-social-blogger.right:after{content:''}.icon-ss-social-posterous:before,.icon-ss-social-posterous.right:after{content:''}.icon-ss-social-quora:before,.icon-ss-social-quora.right:after{content:''}.icon-ss-social-youtube:before,.icon-ss-social-youtube.right:after{content:''}.icon-ss-social-vimeo:before,.icon-ss-social-vimeo.right:after{content:''}.icon-ss-social-vine:before,.icon-ss-social-vine.right:after{content:''}.icon-ss-social-letterboxd:before,.icon-ss-social-letterboxd.right:after{content:''}.icon-ss-social-flickr:before,.icon-ss-social-flickr.right:after{content:''}.icon-ss-social-instagram:before,.icon-ss-social-instagram.right:after{content:''}.icon-ss-social-500px:before,.icon-ss-social-500px.right:after{content:''}.icon-ss-social-etsy:before,.icon-ss-social-etsy.right:after{content:''}.icon-ss-social-pinterest:before,.icon-ss-social-pinterest.right:after{content:''}.icon-ss-social-svpply:before,.icon-ss-social-svpply.right:after{content:''}.icon-ss-social-readmill:before,.icon-ss-social-readmill.right:after{content:''}.icon-ss-social-dropbox:before,.icon-ss-social-dropbox.right:after{content:''}.icon-ss-social-pinboard:before,.icon-ss-social-pinboard.right:after{content:''}.icon-ss-social-delicious:before,.icon-ss-social-delicious.right:after{content:''}.icon-ss-social-dribbble:before,.icon-ss-social-dribbble.right:after{content:''}.icon-ss-social-behance:before,.icon-ss-social-behance.right:after{content:''}.icon-ss-social-github:before,.icon-ss-social-github.right:after{content:''}.icon-ss-social-octocat:before,.icon-ss-social-octocat.right:after{content:''}.icon-ss-social-stackoverflow:before,.icon-ss-social-stackoverflow.right:after{content:''}.icon-ss-social-paypal:before,.icon-ss-social-paypal.right:after{content:''}.icon-ss-social-kickstarter:before,.icon-ss-social-kickstarter.right:after{content:''}.icon-ss-social-foursquare:before,.icon-ss-social-foursquare.right:after{content:''}.icon-ss-social-yelp:before,.icon-ss-social-yelp.right:after{content:''}.icon-ss-social-skype:before,.icon-ss-social-skype.right:after{content:''}.icon-ss-social-rdio:before,.icon-ss-social-rdio.right:after{content:''}.icon-ss-social-spotify:before,.icon-ss-social-spotify.right:after{content:''}.icon-ss-social-lastfm:before,.icon-ss-social-lastfm.right:after{content:''}.icon-ss-social-soundcloud:before,.icon-ss-social-soundcloud.right:after{content:''}.icon-ss-social-link:before,.icon-ss-social-link.right:after{content:'🔗'}.icon-ss-social-phone:before,.icon-ss-social-phone.right:after{content:'📞'}.icon-ss-social-mail:before,.icon-ss-social-mail.right:after{content:'✉'}.icon-ss-social-like:before,.icon-ss-social-like.right:after{content:'👍'}.icon-ss-social-rss:before,.icon-ss-social-rss.right:after{content:''}.icon-ss-social-share:before,.icon-ss-social-share.right:after{content:''}.icon-ss-social-apple:before,.icon-ss-social-apple.right:after{content:''}.icon-ss-social-microsoft:before,.icon-ss-social-microsoft.right:after{content:''}.icon-ss-social-windows:before,.icon-ss-social-windows.right:after{content:''}.icon-ss-social-android:before,.icon-ss-social-android.right:after{content:''}.icon-ss-social-blackberry:before,.icon-ss-social-blackberry.right:after{content:''}
